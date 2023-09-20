@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Alice">
+    <title>NutriDiet</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<header>
+    <figure>
+      <img src="./logo.png" alt="minha imagem">
+    </figure>
+
+    <nav>
+        <a href="./" target="_blank">Alimentos Saudaveis</a>
+        <a href="./" target="_blank"></a>
+    </nav>
+</header>
+        
+    <body>
+        
+        <main class="login">
+        <section>
+            <br>
+            <h1>Qual o seu objetivo: emagrecer, ganhar massa magra e/ou mudar a alimentação?</h1>
+            <br>
+           
+            <img src="./magra.avif" class="imagem">
+    
+            </div>
+            <div class="prin">
+                <div class="input-group mb-1">
+                    <label for="selectType" class="p-0 mb-0 font-weight-bold">qual é o seu objetivo?</label>
+                    <select id="selectType" name="selectType" class="form-control rounded-left rounded-right input__form w-100" tabindex="1" data-val="true" data-val-required="O campo objetivo é obrigatório.">
+                        <option value="" selected="">Escolha uma opção</option>
+                        <option value="lostWeight">Perder peso</option>
+                        <option value="gainWeight">Ganhar massa magra</option>
+                        <option value="healthfood">Me alimentar melhor</option>
+                    </select>
+    
+                    <div class="campo1">
+                        <div class="input-group">
+                            <label for="Peso" class="p-0">peso</label>
+                            <input type="text" onblur="calculaMeta()" onload="calculaMeta()" class="form-control rounded-left rounded-right input__form w-100 " tabindex="2" data-val="true" data-val-required="O campo peso é obrigatório" placeholder="Digite aqui seu peso atual"name="Peso">
+                            <div class="peso"></div>
+                            <span class="banner__error field-validation-valid" data-valmsg-for="Peso" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+    
+                    <div class="campo1">
+                        <div input placeholder="p-0">
+                            <label for="Altura" class="p-0">altura</label>
+                            <input type="text" onblur="calculaMeta()" onload="calculaMeta()" class="form-control rounded-left rounded-right input__form w-100" tabindex="3" data-val="true" data-val-required="O campo altura é obrigatório" placeholder="Digite aqui sua altura" value="" id="Altura" name="Altura" maxlength="4">
+                            <div class="altura"></div>
+                            <span class="banner__error field-validation-valid" data-valmsg-for="Altura" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <div class="input-group">
+                            <label for="Nacimento" class="p-0">nascimento</label>
+                            <input type="text" tabindex="4" data-val="true" data-val-required="O campo data de nascimento é obrigatório" placeholder="Digite aqui seu nascimento" value="" id="Nascimento" name="Nascimento" maxlength="10">
+    
+                            <input type="hidden" value="09/20/2005" id="NascimentoStart" name="NascimentoStart">
+    
+    
+                            <span class="banner__error field-validation-valid" data-valmsg-for="Nascimento" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="sexo">
+                        <div class="input-group mb-1 position-relative flex-column">
+                            <label class="p-0">sexo</label>
+                            <div class="d-flex justify-content-start">
+                                <div class="form-check mr-5">
+                                    <input class="form-check " type="radio" data-val-required="O campo sexo é obrigatório." id="SexoTpF" value="F" tabindex="5">
+                                    <label class="form-check-label" for="SexoTpF">
+                                        feminino
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check " type="radio" >
+                                    <label class="form-check-label" for="SexoTpM">
+                                        masculino
+                                    </label>
+                                </div>
+                            </div>
+                            <span class="banner__error field-validation-valid" data-valmsg-for="DDLSexo" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <div class="input-group mb-1">
+                            <label for="ddlMeta" class="p-0">meta de peso</label>
+                            <select class="form-control rounded-left rounded-right input__form w-100" tabindex="6" data-val="true" data-val-required="O campo meta de peso é obrigatório." id="ddlMeta" name="ddlMeta">
+                                <option value="">insira seu peso</option>
+                            </select>
+                            <span class="banner__error field-validation-valid" data-valmsg-for="ddlMeta" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+    
+                    <div class="campo1">
+                        <div class="input-group mb-1 position-relative">
+                            <label for="Nome" class="p-0">nome</label>
+                            <input type="text" class="form-control rounded-left rounded-right input__form w-100" data-val="true" data-val-length="Número de caracteres excedido, máximo 120" data-val-length-max="120" data-val-required="O campo nome é obrigatório" id="Nome" maxlength="120" name="Nome" placeholder="Qual seu nome?" size="40" tabindex="7" value="">
+                            <span class="banner__error field-validation-valid" data-valmsg-for="Nome" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+    
+                    <div class="campo1">
+                        <div class="input-group mb-1 position-relative">
+                            <label for="Email" class="p-0">e-mail</label>
+                            <input data-val="true" data-val-email="E-mail inválido" data-val-remote="E-mail inválido" data-val-remote-additionalfields="*.Email" data-val-remote-url="https://www.tecnonutri.com.br/avaliacao/PesoIdeal/ValidaEmail" data-val-required="O campo e-mail é obrigatório" id="Email" maxlength="120" name="Email" placeholder="Qual seu e-email?" size="40" tabindex="8" type="email" value="">
+                            <span class="banner__error field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+    
+                    <div class="form">
+                        <button class="oi" id="btnAvaliacaoSubmit" tabindex="8">
+    Comece já!                            </button>
+                
+                    <span class="banner__error field-validation-valid" data-valmsg-for="selectType" data-valmsg-replace="true"></span>
+                </div>
+            </div>    
